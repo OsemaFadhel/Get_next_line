@@ -6,7 +6,7 @@
 /*   By: ofadhel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:33:07 by ofadhel           #+#    #+#             */
-/*   Updated: 2023/03/07 11:33:20 by ofadhel          ###   ########.fr       */
+/*   Updated: 2023/03/08 10:37:50 by ofadhel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 
 char	*get_next_line(int fd);
 char	*ft_read_to_backup(int fd, char *backup);
-char	*ft_strchr(char *s, int c);
-char	*ft_strjoin(char *backup, char *buff);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);
 char	*ft_get_line(char *backup);
 char	*ft_backup(char *backup);

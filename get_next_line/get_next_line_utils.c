@@ -6,67 +6,67 @@
 /*   By: ofadhel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:31:20 by ofadhel           #+#    #+#             */
-/*   Updated: 2023/03/07 11:31:37 by ofadhel          ###   ########.fr       */
+/*   Updated: 2023/03/08 10:30:21 by ofadhel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	int	c;
 
-	i = 0;
-	while (str[i] != '\0')
+	c = 0;
+	while (s[c] != '\0')
 	{
-		i++;
+		c++;
 	}
-	return (i);
+	return (c);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	str;
 
+	str = (char) c;
 	i = 0;
-	if (!s)
-		return (0);
-	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
+		if (s[i] == str)
+			return ((char *)(s + i));
 		i++;
 	}
+	if (s[i] == str)
+		return ((char *)(s + i));
 	return (0);
 }
 
-char	*ft_strjoin(char *backup, char *buff)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
 	char	*str;
+	int		i;
+	int		len;
 
-	if (!backup)
+	i = 0;
+	len = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return (NULL);
+	while (s1[i])
 	{
-		backup = (char *)malloc(1 * sizeof(char));
-		backup[0] = '\0';
+		str[i] = s1[i];
+		i++;
 	}
-	if (!backup || !buff)
-		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(backup) + ft_strlen(buff)) + 1));
-	if (str == NULL)
-		return (NULL);
-	i = -1;
-	j = 0;
-	if (backup)
-		while (backup[++i] != '\0')
-			str[i] = backup[i];
-	while (buff[j] != '\0')
-		str[i++] = buff[j++];
-	str[ft_strlen(backup) + ft_strlen(buff)] = '\0';
-	free(backup);
+	while (s2[len])
+	{
+		str[i] = s2[len];
+		i++;
+		len++;
+	}
+	str[i] = '\0';
 	return (str);
 }
 
