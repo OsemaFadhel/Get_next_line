@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+#  define BUFFER_SIZE 1500
 # endif
 
+# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdio.h>
 
-char	*get_next_line(int fd);
-char	*ft_read_to_backup(int fd, char *backup);
+size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlen(const char *s);
+char	*get_next_line(int fd);
+char	*ft_read_to_backup(int fd, char *backup);
 char	*ft_get_line(char *backup);
 char	*ft_backup(char *backup);
 
