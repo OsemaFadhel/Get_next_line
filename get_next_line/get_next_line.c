@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*ft_read_to_backup(int fd, char *backup)
+char	*ft_read(int fd, char *backup)
 {
 	char	*buff;
 	int		bytes;
@@ -43,10 +43,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	backup = ft_read_to_backup(fd, backup);
+	backup = ft_read(fd, backup);
 	if (!backup)
 		return (NULL);
 	line = ft_get_line(backup);
-	backup = ft_backup(backup);
+	backup = ft_remove_line(backup);
 	return (line);
 }
