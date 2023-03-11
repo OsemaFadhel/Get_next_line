@@ -98,7 +98,7 @@ char	*ft_get_line(char *backup)
 	return (str);
 }
 
-char	*ft_backup(char *backup)
+char	*ft_remove_line(char *backup)
 {
 	int		i;
 	int		j;
