@@ -12,9 +12,9 @@
 
 #include "get_next_line_bonus.h"
 
-char	*ft_read_to_backup(int fd, char *backup)
+char	*ft_read(int fd, char *backup)
 {
-	char	*buff;
+	char	*buffer;
 	int		bytes;
 
 	buff = malloc(BUFFER_SIZE + 1);
@@ -43,10 +43,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	backup[fd] = ft_read_to_backup(fd, backup[fd]);
+	backup[fd] = ft_read(fd, backup[fd]);
 	if (!backup[fd])
 		return (NULL);
 	line = ft_get_line(backup[fd]);
-	backup[fd] = ft_backup(backup[fd]);
+	backup[fd] = ft_remove_line(backup[fd]);
 	return (line);
 }
