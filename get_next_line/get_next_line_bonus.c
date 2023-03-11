@@ -15,7 +15,7 @@
 char	*ft_read(int fd, char *backup)
 {
 	char	*buffer;
-	int		bytes;
+	int	bytes;
 
 	buff = malloc(BUFFER_SIZE + 1);
 	if (!buff)
