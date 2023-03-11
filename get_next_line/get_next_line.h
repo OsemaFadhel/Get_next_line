@@ -20,7 +20,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <strings.h>
 # include <fcntl.h>
 
 size_t	ft_strlen(const char *s);
