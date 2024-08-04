@@ -172,8 +172,6 @@ int main()
 
 ```
 
-![Visitor Count](https://profile-counter.glitch.me/OsemaFadhel/Get_next_line/count.svg) </h4>
-
 
 
 
