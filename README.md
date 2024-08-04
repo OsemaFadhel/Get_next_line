@@ -1,4 +1,4 @@
-<h1>Get_next_line</h1> <h2 align='right'>Final Grade 100/125 ✅ </h2>
+<h1>Get_next_line</h1> <h2 align='right'>Final Grade 125/125 ✅ </h2>
 
 The get_next_line function is designed to read and return the next line from a file descriptor. 
 
@@ -172,7 +172,7 @@ int main()
 
 ```
 
-
+![Visitor Count](https://profile-counter.glitch.me/OsemaFadhel/Get_next_line/count.svg) </h4>
 
 
 
